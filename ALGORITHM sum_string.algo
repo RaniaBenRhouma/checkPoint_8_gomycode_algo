@@ -1,0 +1,51 @@
+ALGORITHM sentence_manipulation
+/* OBJECTIVES
+We ask to read a sentence, which ends with a point, character by character and to determine:
+
+The length of the sentence (the number of characters).
+The number of words in the sentence (assuming that the words are separated by a single space).
+The number of vowels in the sentence.
+*/
+/* INSTRUCTIONS
+Each character will be treated separately.
+The last character is the.
+Use three variables as counters.
+*/
+
+VAR
+    sentence: STRING :="My phrase is the.";
+    count1,count2,count3 : INTEGER;
+    sum1,sum2,sum3 : INTEGER := 0;
+BEGIN
+    Read(sentence);
+
+FOR count1 FROM 0 TO sentence.length STEP 1  DO
+    sum1:= sum1 + 1 ;
+END_FOR
+    Write( " The length of sentence := ", sum1);
+
+
+
+    FOR count2 FROM 0 TO sentence.length STEP 1  DO
+        
+IF ((sentence[count2])==' ') THEN
+    sum2:= sum2 + 1 ;
+END_IF
+    END_FOR
+    Write( "The number of words := ", sum2 + 1);
+
+
+FOR count3 FROM 0 TO sentence.length STEP 1  DO
+    SWITCH (sentence[count3]) DO
+        case 'a' : 
+        case 'e' : 
+        case 'i' : 
+        case 'o' : 
+        case 'u' : 
+        case 'y' : sum3:= sum3 + 1 ; BREAK;
+        default : 
+    END_SWITCH
+END_FOR
+    Write( " The number of vowels := ", sum3);
+
+END
