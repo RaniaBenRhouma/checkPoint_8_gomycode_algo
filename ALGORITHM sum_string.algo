@@ -13,13 +13,13 @@ Use three variables as counters.
 */
 
 VAR
-    sentence: STRING :="My phrase is the.";
+    sentence: STRING[] :="My phrase is the.";
     count1,count2,count3 : INTEGER;
     sum1,sum2,sum3 : INTEGER := 0;
 BEGIN
-    Read(sentence);
+    
 
-FOR count1 FROM 0 TO sentence.length STEP 1  DO
+FOR count1 FROM 0 TO sentence.length-1 STEP 1  DO
     sum1:= sum1 + 1 ;
 END_FOR
     Write( " The length of sentence := ", sum1);
